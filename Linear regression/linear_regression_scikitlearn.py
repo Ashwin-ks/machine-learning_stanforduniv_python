@@ -19,7 +19,7 @@ data=pd.read_csv(path,header=None,names=['Population','Profit'])
 # set X_tr(one feature) and y_tr(target) ------- (training data)
 cols = data.shape[1]
 #training data
-X_tr = data.iloc[:50,0:cols-1]
+X_tr = data.iloc[:50,0:cols-1] ###OR np.array(data[:50,1].A1)
 y_tr = data.iloc[:50,cols-1:cols]
 #test data
 X_ts = data.iloc[50:,0:cols-1]
