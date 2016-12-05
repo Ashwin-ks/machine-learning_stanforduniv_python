@@ -45,7 +45,9 @@ data.insert(0,'Ones',1)
 colsize=data.shape[1]
 x=np.matrix(data.iloc[:,:colsize-1])
 y=np.matrix(data.iloc[:,colsize-1:colsize])
-theta=np.matrix(np.array([0,0]))     
+theta=np.matrix(np.array([0,0]))   
+print('shapes of np matrices to be used for matrix multiplication in defined funcs')
+print(x.shape,theta.shape,y.shape)  
 print('Initial Cost :',CostFunc(x,y,theta))
 #print('Cost for each of the 100 iterations',GradDesc(x,y,theta,alpha,100))   ##Cost value should decrease after every iteration 
 #perfor linear regression
@@ -54,10 +56,10 @@ print ('Theta',g)
 print ('End cost value after linear regression',CostFunc(x,y,g))
 
 #plot predicted linear regression line
-x = np.linspace(data.Population.min(), data.Population.max(), 100)  
-f = g[0, 0] + (g[0, 1] * x)
+x1 = np.linspace(data.Population.min(), data.Population.max(), 100)  
+f = g[0, 0] + (g[0, 1] * x1)
 fig, ax = plt.subplots(figsize=(12,8))  
-ax.plot(x, f, 'r', label='Prediction')
+ax.plot(x1, f, 'r', label='Prediction')
 ax.scatter(data.Population, data.Profit, label='Traning Data')  
 ax.legend(loc=2)  
 ax.set_xlabel('Population')  
