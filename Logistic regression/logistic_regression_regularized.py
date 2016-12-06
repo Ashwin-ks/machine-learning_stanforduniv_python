@@ -84,7 +84,7 @@ y2 = data2.iloc[:,0:1]
 X2 = np.array(X2.values)  
 y2 = np.array(y2.values)  
 theta2 = np.zeros(11)
-learningRate = 0
+learningRate = 0  ##accuracy with alpha=0 might be an overfit as accuracy is calculated with training data.alpha=1 
 
 print('Cosf func value',costReg(theta2, X2, y2, learningRate))
 import scipy.optimize as opt 
